@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Steps from './Steps'
 function Clusters() {
     const [start, setStart]=useState(false)
@@ -29,7 +29,8 @@ const[el, setEl]=useState(0)
 const[mw, setMw]=useState(0)
 const[ww, setWw]=useState(0)
 const[hn, setHn]=useState(0)
- 
+//  const [focus, setFocus]=useState(false)
+//  const [val, setVal]=useState()
 const calcAgp=()=>{
     let sciencesubject=''
     bio>phy?sciencesubject=bio:sciencesubject=phy
@@ -50,6 +51,50 @@ setCluster(clusterpts)
 
   return (
     <div className='container text-center'>
+     {/* {
+        focus?
+        <div>
+          <div className='focus'>
+  <input type="radio" id="grade_A" name="grade" value="12" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label>A</label><br/>
+
+  <input type="radio" id="grade_A_minus" name="grade" value="11" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >A-</label><br/>
+
+  <input type="radio" id="grade_B_plus" name="grade" value="10" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label>B+</label><br/>
+
+  <input type="radio" id="grade_B" name="grade" value="9" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >B</label><br/>
+
+  <input type="radio" id="grade_B_minus" name="grade" value="8" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >B-</label><br/>
+
+  <input type="radio" id="grade_C_plus" name="grade" value="7" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >C+</label><br/>
+
+  <input type="radio" id="grade_C" name="grade" value="6" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >C</label><br/>
+
+  <input type="radio" id="grade_C_minus" name="grade" value="5" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >C-</label><br/>
+
+  <input type="radio" id="grade_D_plus" name="grade" value="4" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >D+</label><br/>
+
+  <input type="radio" id="grade_D" name="grade" value="3" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >D</label><br/>
+
+  <input type="radio" id="grade_D_minus" name="grade" value="2" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label >D-</label><br/>
+
+  <input type="radio" id="grade_E" name="grade" value="1" onChange={(e)=>{setVal(e.target.value), setFocus(false)}}/>
+  <label>E</label><br/>
+</div>
+
+        </div>
+        :""
+      } */}
         <h4 className='title'>Calculate your Cluster And Agp points Here</h4>
         <Steps/>
        {!start?<div className='start' onClick={()=>setStart((prev)=>!prev)}>{start?"":"Start"}</div>:""} 
@@ -65,171 +110,174 @@ setCluster(clusterpts)
 
         
             
-      {option=="core"?  <div class="col">
-          <div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Mathematics</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="staticEmail" placeholder="@enterpoints" onChange={(e)=>setMath(e.target.value)}/>
+      {option=="core"?  <div className="col">
+          <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label" >Mathematics</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="staticEmail" placeholder="@enterpoints" onChange={(e)=>setMath(e.target.value)} />
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">English</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>setEng(e.target.value)}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">English</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>setEng(e.target.value)} />
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Kiswahili</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>setKis(e.target.value)}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Kiswahili</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>setKis(e.target.value)}/>
     </div>
   </div>
 <button className='btn btn-success' onClick={()=>setOption("sciences")}>Next</button>
   </div>
 :""}
 {option=="sciences"?
-  <div class="col">
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Biology</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setBio(e.target.value)} } />
+  <div className="col">
+    <h6 className='categ'>Sciences</h6>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label">Biology</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setBio(e.target.value)} } />
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Chemistry</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>setChem(e.target.value)}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Chemistry</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>setChem(e.target.value)}/>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Physics</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setPhy(e.target.value)}} />
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Physics</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setPhy(e.target.value)}} />
     </div>
   </div>
   <button className='btn btn-success' onClick={()=>setOption("technicals")}>Next</button>
   </div>
 :""}
 {option=="technicals"?
-  <div class="col">
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label" >Computer</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setComp(e.target.value)}}/>
+  <div className="col">
+     <h6 className='categ'>Technicals</h6>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label" >Computer</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setComp(e.target.value)}}/>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Business Studies</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setBst(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label">Business Studies</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setBst(e.target.value)}}/>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label" >Home Science</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setHsc(e.target.value)}}/>
-    </div>
-  </div>
-
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Agriculture</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setAgric(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label" >Home Science</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setHsc(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Music</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setMsc(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Agriculture</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setAgric(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label" >French</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setFrc(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Music</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setMsc(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Arabic</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setArb(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label" >French</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setFrc(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Building and Construction</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setBld(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Arabic</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setArb(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Power Mechanics</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setPw(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Building and Construction</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setBld(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Art and Design</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setArt(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label">Power Mechanics</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setPw(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Electricity</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setEl(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Art and Design</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setArt(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Metal Work</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setMw(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Electricity</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setEl(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Wood Work</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setWw(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Metal Work</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setMw(e.target.value)}}/>
+    </div>
+  </div>
+
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Wood Work</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setWw(e.target.value)}}/>
     </div>
   </div>
   <button className='btn btn-success' onClick={()=>setOption("humanities")}>Next</button>
   </div>
 :""}
 {option=="humanities"?
-  <div class="col">
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">History</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setHist(e.target.value)}}/>
+  <div className="col">
+    <h6 className='categ'>Humanities</h6>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label">History</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setHist(e.target.value)}}/>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">CRE</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setCRE(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">CRE</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setCRE(e.target.value)}}/>
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Geography</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setGeo(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label  className="col-sm-2 col-form-label">Geography</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setGeo(e.target.value)}}/>
     </div>
   </div>
 
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Hindu  Rel. Ed</label>
-    <div class="col-sm-10">
-      <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setHn(e.target.value)}}/>
+  <div className="mb-3 row">
+    <label className="col-sm-2 col-form-label">Hindu  Rel. Ed</label>
+    <div className="col-sm-10">
+      <input type="number" className="form-control" id="inputPassword" onChange={(e)=>{setHn(e.target.value)}}/>
     </div>
   </div>
   <button className='btn btn-primary' onClick={calcAgp}>AGP</button>
@@ -251,57 +299,37 @@ setCluster(clusterpts)
 <table>
     <thead>
         <th>Grades</th>
-        <th>Points</th>
+        <td>A</td>
+        <td>A-</td>
+        <td>B+</td>
+        <td>B</td>
+        <td>B-</td>
+        <td>C+</td>
+        <td>C</td>
+        <td>C-</td>
+        <td>D+</td>
+        <td>D</td>
+        <td>D-</td>
+        <td>E</td>
     </thead>
     <tbody>
         <tr>
-            <td>A</td>
+        <th>Points</th>
             <td>12</td>
-        </tr>
-        <tr>
-            <td>A-</td>
             <td>11</td>
-        </tr>
-        <tr>
-            <td>B+</td>
             <td>10</td>
-        </tr>
-        <tr>
-            <td>B</td>
             <td>9</td>
-        </tr>
-        <tr>
-            <td>B-</td>
             <td>8</td>
-        </tr>
-        <tr>
-            <td>C+</td>
             <td>7</td>
-        </tr>
-        <tr>
-            <td>C</td>
             <td>6</td>
-        </tr>
-        <tr>
-            <td>C-</td>
             <td>5</td>
-        </tr>
-        <tr>
-            <td>D+</td>
             <td>4</td>
-        </tr>
-        <tr>
-            <td>D</td>
             <td>3</td>
-        </tr>
-        <tr>
-            <td>D-</td>
             <td>2</td>
-        </tr>
-        <tr>
-            <td>E</td>
             <td>1</td>
+           
         </tr>
+        
 
     </tbody>
 </table>

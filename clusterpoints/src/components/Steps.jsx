@@ -4,7 +4,7 @@ function Steps() {
   return (
     <div className="steps">
         <div>
-    <h3 style={{borderBottom:"1px solid"}}>Follow These Easy Steps:</h3>
+    <h5 style={{borderBottom:"1px solid"}}>Follow These Easy Steps:</h5>
     <ol>
     <li>Click on the start button Below</li>
         <li>Click on the select button</li>
