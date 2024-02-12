@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Steps from './Steps'
 function Clusters() {
     const [start, setStart]=useState(false)
+    const [view, setView]=useState(false)
 const [agp, setAgp]=useState(0)
 const [option, setOption]=useState('')
 const [cluster, setCluster]=useState()
@@ -231,12 +232,13 @@ setCluster(clusterpts)
       <input type="number" class="form-control" id="inputPassword" onChange={(e)=>{setHn(e.target.value)}}/>
     </div>
   </div>
-  <button className='btn btn-primary' onClick={calcAgp}>Results</button>
+  <button className='btn btn-primary' onClick={calcAgp}>AGP</button>
    {
     agp==0?<p>You must input all relevant fields first</p>:<div>
         <p>Your agp is: {agp}</p>
-        <p>Your Cluster Points are {cluster}</p>
-        <button onClick={()=>{setOption(""), setStart(false)}} className='btn btn-danger'>Done</button>
+<button onClick={()=>{calcAgp(), setView((prev)=>!prev)}} className='btn btn-secondary'>Cluster</button>
+        {view?<p>Your Cluster Points are {cluster}</p>:""}
+        <button onClick={()=>{setOption(""), setStart(false), setCluster(0), setAgp(0)}} className='btn btn-danger'>Done</button>
         </div>
    }
   </div>
